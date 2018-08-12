@@ -32,6 +32,7 @@ app.use(express.static("public"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+mongoose.Promise = Promise;
 // Connect to the Mongo DB
 if (process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
